@@ -1,0 +1,51 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.paypal.cordova.mobilesdk": {
+            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
+        },
+        "onesignal-cordova-plugin": {
+            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
+        },
+        "cordova-plugin-facebook4": {
+            "APP_ID": "186644988509120",
+            "APP_NAME": "ionic",
+            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
+        }
+    },
+    "dependent_plugins": {
+        "card.io.cordova.mobilesdk": {
+            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
+        }
+    }
+}

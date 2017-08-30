@@ -1,0 +1,26 @@
+<ion-menu [content]="content">
+  <ion-content class="outer-content" no-border-top>
+    <ion-list>
+      <ion-list-header>
+        Shop For {{appConfig.Shop_Name}}
+      </ion-list-header>
+      <ion-item menuClose (click)="goHome()">
+        <ion-icon name="ios-home-outline"></ion-icon>
+        Home
+      </ion-item>
+      <ion-item menuClose (click)="modalContact()">
+        <ion-icon name="ios-mail-outline"></ion-icon>
+        Contact Us
+      </ion-item>
+      <ion-item menuClose (click)="modalFaq()">
+        <ion-icon name="ios-information-circle-outline"></ion-icon>
+        FAQ
+      </ion-item>
+      <ion-item menuClose (click)="modalAbout()">
+        <ion-icon name="ios-globe-outline"></ion-icon>
+        About
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

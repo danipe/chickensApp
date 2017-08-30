@@ -1,0 +1,94 @@
+// http://ionicframework.com/docs/v2/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+/* Side Menu */
+
+ion-menu {
+  background: #fd5459 !important;
+  background-size: contain;
+  background-position-x: 15rem;
+}
+
+ion-menu .menu-inner {
+  background: #fd5459 !important;
+  overflow-y: scroll;
+}
+
+ion-menu .outer-content {
+  background: #fd5459 !important;
+}
+
+ion-menu .outer-content ion-list-header {
+  color: #ffb5b9;
+}
+
+ion-menu .outer-content ion-label {
+  font-size: 1.8rem;
+}
+
+ion-menu .outer-content ion-icon {
+  font-size: 2rem;
+  color: #fff;
+  padding-right: 1rem;
+}
+
+ion-menu .outer-content .item {
+  background: transparent;
+  color: #fff;
+}
+
+
+/* hide scrollbar */
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.hide_tab .tabbar {
+  display: none;
+}
+
+.commonbg {
+  background: #e4e9ee !important;
+}
+
+ion-modal.add-to-cart-popup {
+  @media (min-width: 300px) and (min-height: 480px) {
+    ion-backdrop {
+      visibility: visible;
+    }
+  }
+
+  .modal-wrapper {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 2px;
+    width: 100%;
+    //top: 50%;
+    //top: 300px;
+    height: 70%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 0;
+    box-shadow: 0 16px 20px rgba(0,0,0,.4);
+    background-color: #fafafa;
+  }
+}
