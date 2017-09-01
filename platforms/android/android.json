@@ -9,39 +9,15 @@
                 "parents": {
                     "/*": [
                         {
+                            "xml": "<feature name=\"CardIO\"><param name=\"android-package\" value=\"io.card.cordova.sdk.CardIOCordovaPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"PayPalMobile\"><param name=\"android-package\" value=\"com.paypal.cordova.sdk.PayPalMobileCordovaPlugin\" /></feature>",
                             "count": 1
                         },
                         {
                             "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"io.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"OneSignalPush\"><param name=\"android-package\" value=\"com.plugin.gcm.OneSignalPush\" /></feature>",
                             "count": 1
                         },
                         {
@@ -73,59 +49,31 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"CardIO\"><param name=\"android-package\" value=\"io.card.cordova.sdk.CardIOCordovaPlugin\" /></feature>",
-                            "count": 1
-                        }
-                    ]
-                }
-            },
-            "AndroidManifest.xml": {
-                "parents": {
-                    "/*": [
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 1
-                        }
-                    ],
-                    "/manifest": [
-                        {
-                            "xml": "<uses-permission android:name=\"com.amazon.device.messaging.permission.RECEIVE\" />",
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<permission android:name=\"com.oddwolves.Ionic2WooStore.permission.RECEIVE_ADM_MESSAGE\" android:protectionLevel=\"signature\" />",
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<uses-permission android:name=\"com.oddwolves.Ionic2WooStore.permission.RECEIVE_ADM_MESSAGE\" />",
-                            "count": 1
-                        }
-                    ],
-                    "/manifest/application": [
-                        {
-                            "xml": "<amazon:enable-feature android:name=\"com.amazon.device.messaging\" android:required=\"false\" xmlns:amazon=\"http://schemas.amazon.com/apk/res/android\" />",
+                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<service android:exported=\"false\" android:name=\"com.onesignal.ADMMessageHandler\" />",
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<receiver android:name=\"com.onesignal.ADMMessageHandler$Receiver\" android:permission=\"com.amazon.device.messaging.permission.SEND\"><intent-filter><action android:name=\"com.amazon.device.messaging.intent.REGISTRATION\" /><action android:name=\"com.amazon.device.messaging.intent.RECEIVE\" /><category android:name=\"com.oddwolves.Ionic2WooStore\" /></intent-filter></receiver>",
-                            "count": 1
-                        }
-                    ],
-                    "application": [
-                        {
-                            "xml": "<meta-data android:name=\"com.facebook.sdk.ApplicationId\" android:value=\"@string/fb_app_id\" />",
+                            "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<meta-data android:name=\"com.facebook.sdk.ApplicationName\" android:value=\"@string/fb_app_name\" />",
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"io.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|screenLayout|screenSize|orientation\" android:label=\"@string/fb_app_name\" android:name=\"com.facebook.FacebookActivity\" android:theme=\"@android:style/Theme.Translucent.NoTitleBar\" />",
+                            "xml": "<feature name=\"OneSignalPush\"><param name=\"android-package\" value=\"com.plugin.gcm.OneSignalPush\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -144,51 +92,111 @@
                         }
                     ]
                 }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "application": [
+                        {
+                            "xml": "<meta-data android:name=\"com.facebook.sdk.ApplicationId\" android:value=\"@string/fb_app_id\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<meta-data android:name=\"com.facebook.sdk.ApplicationName\" android:value=\"@string/fb_app_name\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|screenLayout|screenSize|orientation\" android:label=\"@string/fb_app_name\" android:name=\"com.facebook.FacebookActivity\" android:theme=\"@android:style/Theme.Translucent.NoTitleBar\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"com.amazon.device.messaging.permission.RECEIVE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<permission android:name=\"com.geotap.avicultura.permission.RECEIVE_ADM_MESSAGE\" android:protectionLevel=\"signature\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.geotap.avicultura.permission.RECEIVE_ADM_MESSAGE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<amazon:enable-feature android:name=\"com.amazon.device.messaging\" android:required=\"false\" xmlns:amazon=\"http://schemas.amazon.com/apk/res/android\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:exported=\"false\" android:name=\"com.onesignal.ADMMessageHandler\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"com.onesignal.ADMMessageHandler$Receiver\" android:permission=\"com.amazon.device.messaging.permission.SEND\"><intent-filter><action android:name=\"com.amazon.device.messaging.intent.REGISTRATION\" /><action android:name=\"com.amazon.device.messaging.intent.RECEIVE\" /><category android:name=\"com.geotap.avicultura\" /></intent-filter></receiver>",
+                            "count": 1
+                        }
+                    ]
+                }
             }
         }
     },
     "installed_plugins": {
+        "card.io.cordova.mobilesdk": {
+            "PACKAGE_NAME": "com.geotap.avicultura"
+        },
         "com.paypal.cordova.mobilesdk": {
-            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
+            "PACKAGE_NAME": "com.geotap.avicultura"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
+            "PACKAGE_NAME": "com.geotap.avicultura"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
-        },
-        "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
-        },
-        "onesignal-cordova-plugin": {
-            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
+            "PACKAGE_NAME": "com.geotap.avicultura"
         },
         "cordova-plugin-facebook4": {
             "APP_ID": "186644988509120",
             "APP_NAME": "ionic",
-            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
+            "PACKAGE_NAME": "com.geotap.avicultura"
         },
-        "card.io.cordova.mobilesdk": {
-            "PACKAGE_NAME": "com.oddwolves.Ionic2WooStore"
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.geotap.avicultura"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.geotap.avicultura"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.geotap.avicultura"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.geotap.avicultura"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.geotap.avicultura"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.geotap.avicultura"
+        },
+        "onesignal-cordova-plugin": {
+            "PACKAGE_NAME": "com.geotap.avicultura"
         }
     },
     "dependent_plugins": {},
     "modules": [
+        {
+            "id": "card.io.cordova.mobilesdk.CardIO",
+            "file": "plugins/card.io.cordova.mobilesdk/www/cdv-plugin-card-io.js",
+            "pluginId": "card.io.cordova.mobilesdk",
+            "clobbers": [
+                "CardIO"
+            ]
+        },
         {
             "id": "com.paypal.cordova.mobilesdk.PayPalMobile",
             "file": "plugins/com.paypal.cordova.mobilesdk/www/cdv-plugin-paypal-mobile-sdk.js",
@@ -203,6 +211,14 @@
             "pluginId": "cordova-plugin-device",
             "clobbers": [
                 "device"
+            ]
+        },
+        {
+            "id": "cordova-plugin-facebook4.FacebookConnectPlugin",
+            "file": "plugins/cordova-plugin-facebook4/www/facebook-native.js",
+            "pluginId": "cordova-plugin-facebook4",
+            "clobbers": [
+                "facebookConnectPlugin"
             ]
         },
         {
@@ -254,36 +270,20 @@
             "clobbers": [
                 "OneSignal"
             ]
-        },
-        {
-            "id": "cordova-plugin-facebook4.FacebookConnectPlugin",
-            "file": "plugins/cordova-plugin-facebook4/www/facebook-native.js",
-            "pluginId": "cordova-plugin-facebook4",
-            "clobbers": [
-                "facebookConnectPlugin"
-            ]
-        },
-        {
-            "id": "card.io.cordova.mobilesdk.CardIO",
-            "file": "plugins/card.io.cordova.mobilesdk/www/cdv-plugin-card-io.js",
-            "pluginId": "card.io.cordova.mobilesdk",
-            "clobbers": [
-                "CardIO"
-            ]
         }
     ],
     "plugin_metadata": {
+        "card.io.cordova.mobilesdk": "2.1.0",
         "com.paypal.cordova.mobilesdk": "3.3.1",
         "cordova-plugin-console": "1.0.5",
         "cordova-plugin-device": "1.1.4",
+        "cordova-plugin-facebook4": "1.7.4",
         "cordova-plugin-inappbrowser": "1.6.1",
         "cordova-plugin-splashscreen": "4.0.1",
         "cordova-plugin-statusbar": "2.2.1",
         "cordova-plugin-whitelist": "1.3.1",
         "cordova-plugin-x-socialsharing": "5.1.3",
         "ionic-plugin-keyboard": "2.2.1",
-        "onesignal-cordova-plugin": "2.0.10",
-        "cordova-plugin-facebook4": "1.7.4",
-        "card.io.cordova.mobilesdk": "2.1.0"
+        "onesignal-cordova-plugin": "2.0.10"
     }
 }

@@ -1,6 +1,14 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
+        "id": "card.io.cordova.mobilesdk.CardIO",
+        "file": "plugins/card.io.cordova.mobilesdk/www/cdv-plugin-card-io.js",
+        "pluginId": "card.io.cordova.mobilesdk",
+        "clobbers": [
+            "CardIO"
+        ]
+    },
+    {
         "id": "com.paypal.cordova.mobilesdk.PayPalMobile",
         "file": "plugins/com.paypal.cordova.mobilesdk/www/cdv-plugin-paypal-mobile-sdk.js",
         "pluginId": "com.paypal.cordova.mobilesdk",
@@ -14,6 +22,14 @@ module.exports = [
         "pluginId": "cordova-plugin-device",
         "clobbers": [
             "device"
+        ]
+    },
+    {
+        "id": "cordova-plugin-facebook4.FacebookConnectPlugin",
+        "file": "plugins/cordova-plugin-facebook4/www/facebook-native.js",
+        "pluginId": "cordova-plugin-facebook4",
+        "clobbers": [
+            "facebookConnectPlugin"
         ]
     },
     {
@@ -65,39 +81,23 @@ module.exports = [
         "clobbers": [
             "OneSignal"
         ]
-    },
-    {
-        "id": "cordova-plugin-facebook4.FacebookConnectPlugin",
-        "file": "plugins/cordova-plugin-facebook4/www/facebook-native.js",
-        "pluginId": "cordova-plugin-facebook4",
-        "clobbers": [
-            "facebookConnectPlugin"
-        ]
-    },
-    {
-        "id": "card.io.cordova.mobilesdk.CardIO",
-        "file": "plugins/card.io.cordova.mobilesdk/www/cdv-plugin-card-io.js",
-        "pluginId": "card.io.cordova.mobilesdk",
-        "clobbers": [
-            "CardIO"
-        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
+    "card.io.cordova.mobilesdk": "2.1.0",
     "com.paypal.cordova.mobilesdk": "3.3.1",
     "cordova-plugin-console": "1.0.5",
     "cordova-plugin-device": "1.1.4",
+    "cordova-plugin-facebook4": "1.7.4",
     "cordova-plugin-inappbrowser": "1.6.1",
     "cordova-plugin-splashscreen": "4.0.1",
     "cordova-plugin-statusbar": "2.2.1",
     "cordova-plugin-whitelist": "1.3.1",
     "cordova-plugin-x-socialsharing": "5.1.3",
     "ionic-plugin-keyboard": "2.2.1",
-    "onesignal-cordova-plugin": "2.0.10",
-    "cordova-plugin-facebook4": "1.7.4",
-    "card.io.cordova.mobilesdk": "2.1.0"
+    "onesignal-cordova-plugin": "2.0.10"
 };
 // BOTTOM OF METADATA
 });

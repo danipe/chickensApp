@@ -10,7 +10,7 @@
   "Country": "country",
   "Email": "Email",
   "Phone": "Phone",
-  
+
   "Select_Country": "Select Country",
   "Address1": "Address1",
   "Address2": "Address2",
@@ -142,6 +142,9 @@
   "Notice": "Notice",
   "NetWork_Error": "Error!Please check your network",
   "OK": "OK",
+
+  "Downloads": "Descargas",
+  "MyDownloads": "Mis descargas",
 
   "Tab_Home": "Home",
   "Tab_Category": "Category",

@@ -30,6 +30,7 @@ import { FaqPage } from '../pages/faq/faq';
 import { ThanksPage } from '../pages/thanks/thanks';
 import { StripePayPage } from '../pages/stripe-pay/stripe-pay';
 import { AttributePage } from '../pages/attribute/attribute';
+import { DownloadPage } from '../pages/download/download';
 
 import { AppConfig } from './app-config';
 import { WoocommerceService } from '../providers/woocommerce-service';
@@ -61,6 +62,7 @@ import { SowService } from '../providers/sow-service';
     AboutPage,
     ContactPage,
     FaqPage,
+    DownloadPage,
     ThanksPage,
     CartTabPage, StripePayPage, AttributePage
   ],
@@ -91,6 +93,7 @@ import { SowService } from '../providers/sow-service';
     CategoryPage,
     ListingsPage,
     LoginPage,
+    DownloadPage,
     ProductDetailsPage,
     RegisterPage,
     SearchPage,

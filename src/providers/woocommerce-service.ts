@@ -89,6 +89,25 @@ export class WoocommerceService {
     });
   }
 
+  getAllDownloads(id) {
+    var service = this;
+    let url = service.appConfig.Shop_URL + "/wp-json/wc/v2/customers/"+id+"/downloads";
+    return new Promise(function (resolve, reject) {
+      service.http.get(service.initRequest(url, 'get')).catch(err => {
+        reject('error');
+        return Observable.throw(err);
+      }).map(res => res.json()).subscribe(data => {
+        if (data) {
+          service.cachedData = data;
+          resolve(service.cachedData);
+        }
+        else {
+          reject();
+        }
+      });
+    });
+  }
+
   getStoreCategories(params) {
     var service = this;
     let url = service.appConfig.Shop_URL + "/wp-json/wc/v1/products/categories";

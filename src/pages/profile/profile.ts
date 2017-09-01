@@ -7,6 +7,7 @@ import { UserService } from '../../providers/user-service';
 import { TbarService } from '../../providers/tbar-service';
 import { Storage } from '@ionic/storage';
 import { TranslateService } from '@ngx-translate/core';
+import { DownloadPage } from '../download/download';
 /*
   Generated class for the Profile page.
 
@@ -19,8 +20,13 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public userService: UserService
-    , public alertCtrl: AlertController, public tbarService: TbarService, public storage: Storage, public translateService: TranslateService) {
+  constructor(public navCtrl: NavController,
+     public modalCtrl: ModalController,
+     public userService: UserService
+    , public alertCtrl: AlertController,
+    public tbarService: TbarService,
+    public storage: Storage,
+    public translateService: TranslateService) {
   }
 
   openOrderList() {
@@ -51,7 +57,10 @@ export class ProfilePage {
     let modal = this.modalCtrl.create(LoginPage, {}, { showBackdrop: true, enableBackdropDismiss: true });
     modal.present();
   }
-
+  openDownloadsPage(){
+    console.log("OpenDownloadsPage() opening");
+    this.navCtrl.push(DownloadPage,{ direction: 'forward'});
+  }
   openEditAddress() {
     if (this.userService.isAuthenticated) {
       this.navCtrl.push(AddressPage, { direction: 'forward' });

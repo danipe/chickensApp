@@ -46664,6 +46664,10 @@ page-contact .logo-img {
   height: 160px;
 }
 
+page-address .save-button {
+  width: 70%;
+}
+
 page-faq ion-icon::before {
   font-size: 20px;
 }
@@ -46674,11 +46678,6 @@ page-home ion-content {
 
 page-home ion-slides {
   height: 150px;
-}
-
-page-home ion-slides ion-slide img {
-  width: 100% !important;
-  height: 150px !important;
 }
 
 page-home ion-grid ion-row {
@@ -46692,12 +46691,11 @@ page-home ion-grid ion-row ion-col .card {
   font-size: 0.9em;
 }
 
-page-home ion-grid ion-row ion-col .card img {
-  width: 100%;
-  height: 180px;
-  background-size: cover;
+page-home ion-grid ion-row ion-col .card .img {
+  height: 40vh;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
-  position: relative;
 }
 
 page-home ion-grid ion-row ion-col .card .title {

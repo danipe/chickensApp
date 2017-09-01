@@ -1,0 +1,31 @@
+<!--
+  Generated template for the Downloads page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{ 'MyDownloads' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="commonbg">
+  <ion-card *ngFor="let download of downloadList">
+    <ion-card-content>
+      <ion-card-title>
+        {{download.product_name}}
+      </ion-card-title>
+      {{download.downloads_remaining}}
+    </ion-card-content>
+    <ion-row>
+    <ion-col>
+      <button ion-button icon-left (click)="openUrl(download.file.file)">
+        Abrir revista
+      </button>
+    </ion-col>
+  </ion-row>
+  </ion-card>
+</ion-content>
+
+
+<!-- downloadList -> download_name download_url downloads_remaining product_id  product_name / file []-> file -->

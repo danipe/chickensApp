@@ -46664,6 +46664,10 @@ page-contact .logo-img {
   height: 160px;
 }
 
+page-address .save-button {
+  width: 70%;
+}
+
 page-faq ion-icon::before {
   font-size: 20px;
 }
