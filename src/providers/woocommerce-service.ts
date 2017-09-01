@@ -268,6 +268,26 @@ export class WoocommerceService {
     return url;
   }
 
+  getCustomerDownloads(id) {
+    var service = this;
+    let url = service.appConfig.Shop_URL + "/wp-json/wc/v2/customers/" + id + "/downloads";
+    url = this.initUrl(url, '');
+    return new Promise(function (resolve, reject) {
+      service.http.get(service.initRequest(url, 'get')).catch(err => {
+        reject('error');
+        return Observable.throw(err);
+      }).map(res => res.json()).subscribe(data => {
+        if (data) {
+          service.cachedData = data;
+          resolve(service.cachedData);
+        }
+        else {
+          reject();
+        }
+      });
+    });
+  }
+
   initRequest(url: string, method) {
     if (this.isSSL(url)) {
       if (url.indexOf('?') >= 0) {

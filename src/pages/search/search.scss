@@ -27,6 +27,13 @@ page-search ion-grid ion-row {
   flex-wrap: wrap;
 }
 
+.img {
+  height: 40vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 page-search ion-grid ion-row ion-col .card {
   overflow: hidden;
   font-size: 0.9em;

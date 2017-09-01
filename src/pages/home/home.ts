@@ -29,9 +29,7 @@ export class HomePage {
   slides: Array<any>;
   load_slide_end: boolean;
   load_products_end: boolean;
-
   showSlide = false;
-
   products: Array<any> = new Array<any>();
   constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public wooService: WoocommerceService,
     http: Http, public tb: TbarService, public alertCtrl: AlertController, public sowService: SowService, public appConfig: AppConfig, public translateService: TranslateService) {
@@ -85,13 +83,8 @@ export class HomePage {
             this.page++;
           }
           this.load_products_end = true;
-          if (this.appConfig.Show_Home_Slide) {
-            if (this.load_products_end && this.load_products_end) {
-              this.loadingModal.dismiss();
-            }
-          } else {
-            this.loadingModal.dismiss();
-          }
+          this.loadingModal.dismiss();
+
 
         }, (reson) => {
           this.loadingModal.dismiss();
