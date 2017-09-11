@@ -17,7 +17,7 @@ export class AppConfig {
   //your shipping method,you need set these method with our plugin
   Shop_Shipping = [];
 
-  App_Secret = "1d46c8886f0d54a7943c4c2b4a47384009f5cde09c40ab021df8bab8fcff7890";//install our plugin then Generate Secret key in basic setting
+  App_Secret = "9d7af31324d77590474d3d5838b0784e12500f1b2d28c1253a9c51ccf20e4796";//install our plugin then Generate Secret key in basic setting
   Show_Home_Slide = true;//whether show home slide
 
   //Paypal setting
