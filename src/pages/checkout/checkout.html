@@ -23,7 +23,7 @@
         <ion-input type="email" placeholder="{{ 'Email' | translate }}" [(ngModel)]="shippingAddress.email"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="phone" placeholder="{{ 'Phone' | translate }}" [(ngModel)]="shippingAddress.phone"></ion-input>
+        <ion-input type="number" placeholder="{{ 'Phone' | translate }}" [(ngModel)]="shippingAddress.phone"></ion-input>
       </ion-item>
       <ion-item (click)="selectCountry('shipping')">
         <ion-label>{{shippingAddress.country==''?('Select_Country'| translate):shippingAddress.country}}</ion-label>
@@ -42,7 +42,7 @@
         <ion-input type="text" placeholder="{{ 'State' | translate }}" [(ngModel)]="shippingAddress.state"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="text" placeholder="{{ 'Zip_Code' | translate }}" [(ngModel)]="shippingAddress.zip"></ion-input>
+        <ion-input type="number" placeholder="{{ 'Zip_Code' | translate }}" [(ngModel)]="shippingAddress.zip"></ion-input>
       </ion-item>
     </ion-item-group>
     <ion-item-divider color="light">
@@ -60,7 +60,7 @@
         <ion-input type="email" placeholder="{{ 'Email' | translate }}" [(ngModel)]="billingAddress.email"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="phone" placeholder="{{ 'Phone' | translate }}" [(ngModel)]="billingAddress.phone"></ion-input>
+        <ion-input type="number" placeholder="{{ 'Phone' | translate }}" [(ngModel)]="billingAddress.phone"></ion-input>
       </ion-item>
       <ion-item (click)="selectCountry('billing')">
         <ion-label>{{billingAddress.country==''?('Select_Country'| translate):billingAddress.country}}</ion-label>
@@ -79,7 +79,7 @@
         <ion-input type="text" placeholder="{{ 'State' | translate }}" [(ngModel)]="billingAddress.state"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="text" placeholder="{{ 'Zip_Code' | translate }}" [(ngModel)]="billingAddress.zip"></ion-input>
+        <ion-input type="number" placeholder="{{ 'Zip_Code' | translate }}" [(ngModel)]="billingAddress.zip"></ion-input>
       </ion-item>
     </ion-item-group>
     <ion-item-group radio-group [(ngModel)]="selShipMethod">
@@ -92,7 +92,7 @@
   </ion-list>
   <button ion-button full color="primary" (click)="payPayPal()">{{ 'Pay_Via_Paypal' | translate }}</button>
   <button ion-button full color="third" (click)="payStripe()" *ngIf="appConfig.Enable_Stripe" >{{ 'Pay_Via_Stripe' | translate }}</button>
-  <button ion-button full color="twitter" (click)="payViaSite()">{{ 'Pay_Via_Site' | translate }}</button>
+ <!-- <button ion-button full color="twitter" (click)="payViaSite()">{{ 'Pay_Via_Site' | translate }}</button>-->
 </ion-content>
 <ion-footer>
 </ion-footer>

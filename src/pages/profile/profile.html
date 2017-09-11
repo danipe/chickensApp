@@ -15,10 +15,10 @@
 <ion-content class="commonbg">
   <div class="user-info-header" text-center padding-top>
     <div *ngIf="userService.isAuthenticated">
-      <p>{{ 'Welcome' | translate }}{{userService.name}}</p>
+      <p>{{ 'Welcome' | translate }} {{userService.name}}</p>
       <p>{{userService.email}}</p>
     </div>
-    <button *ngIf="!userService.isAuthenticated" ion-button color="light" outline (click)="login()">Sign In</button>
+    <button *ngIf="!userService.isAuthenticated" ion-button color="light" outline (click)="login()">Iniciar sesión</button>
   </div>
   <div class="settings">
     <ion-list inset>

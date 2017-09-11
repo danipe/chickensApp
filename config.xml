@@ -3,7 +3,7 @@
     <name>Avicultura</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="wolfljj@gmail.com" href="http:/www.oddwolves.com/">Oldwolf</author>
-    <content original-src="index.html" src="http://192.168.1.38:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

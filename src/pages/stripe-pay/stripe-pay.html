@@ -18,7 +18,7 @@
   <ion-list>
     <ion-item>
       <ion-label floating>{{ 'Card_Number' | translate }}</ion-label>
-      <ion-input type="text" [(ngModel)]="card_number"></ion-input>
+      <ion-input maxlength="16" type="number" [(ngModel)]="card_number"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>{{ 'Expiry_Month' | translate }}</ion-label>
@@ -31,7 +31,7 @@
     </ion-item>
     <ion-item>
        <ion-label floating>{{ 'CVC' | translate }}</ion-label>
-      <ion-input type="text" [(ngModel)]="card_cvc"></ion-input>
+      <ion-input maxlength="3" type="number" [(ngModel)]="card_cvc"></ion-input>
     </ion-item>
   </ion-list>
 </ion-content>

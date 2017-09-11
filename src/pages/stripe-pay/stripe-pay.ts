@@ -43,6 +43,7 @@ export class StripePayPage {
 
     this.total = this.navParams.get('total');
     this.desc = this.navParams.get('desc');
+
   }
 
 

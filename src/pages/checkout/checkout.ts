@@ -279,8 +279,10 @@ export class CheckoutPage {
   }
 
   payStripe() {
+    //console.log("CHECKOUT2"+Number.parseFloat(this.appConfig.Shop_Shipping[this.selShipMethod].cost));
     let modal = this.modalCtrl.create(StripePayPage, {
-      "total": Number.parseFloat(this.total) + Number.parseFloat(this.appConfig.Shop_Shipping[this.selShipMethod].cost),
+      // TODO: Hay que sumarle el precio del envio falta revisar todo esto
+      "total": this.total,
       "desc": this.desc
     }, { showBackdrop: true, enableBackdropDismiss: true });
 

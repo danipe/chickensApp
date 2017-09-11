@@ -10,8 +10,8 @@ export class AppConfig {
   Shop_URL = "https://avicult-kiatoski.c9users.io";//set your website url,eg:"http://www.yousite.com"
   Shop_ConsumerKey = "ck_9a4b429418121817e633ba6d51b0977c2940cacf";//woocommerce rest api ConsumerKey
   Shop_ConsumerSecret = "cs_613d03e1e47dee6dd98c7df36bd132cc624b9940";//woocommerce rest api ConsumerSecret
-  Shop_Currency = "";//no need setting,will get from your Website
-  Shop_Currency_format = "";//no need setting,will get from your Website
+  Shop_Currency = "EUR";//no need setting,will get from your Website
+  Shop_Currency_format = "&euro;";//no need setting,will get from your Website
 
 
   //your shipping method,you need set these method with our plugin
@@ -33,8 +33,8 @@ export class AppConfig {
   Stripe_Live_Publishable_Key = "";//Live mode Publishable Key
 
   Enable_Stripe_Test_Mode = true;//Enable or disable test mode
-  Stripe_Test_Secret_Key = "sk_test_XmlMB5nJOvJ9qEvlu8oc9M38";//Test mode Secret Key
-  Stripe_Test_Publishable_Key = "pk_test_lzIx95R32MjHKiIjc7y9rshM";//Test mode Publishable Key
+  Stripe_Test_Secret_Key = "sk_test_yLkXMlZaeazOJK8AGQLPvepi";//Test mode Secret Key
+  Stripe_Test_Publishable_Key = "pk_test_W2IM34bjEBH8AwhETLTFIXtd";//Test mode Publishable Key
 
   //Onesignal setting
   //Please check our online document set these
