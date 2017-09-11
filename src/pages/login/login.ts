@@ -66,7 +66,6 @@ export class LoginPage {
             this.userService.name = data.first_name + data.last_name;
             this.userService.username = data.username;
             this.userService.isAuthenticated = true;
-
             this.storage.set('oddwolves-user-info', JSON.stringify(data));
             loadingModal.dismiss();
             this.viewCtrl.dismiss();
