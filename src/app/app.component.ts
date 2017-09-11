@@ -1,12 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav, ModalController, App } from 'ionic-angular';
 import { AppConfig } from './app-config';
-import { StatusBar, OneSignal } from 'ionic-native';
+import { StatusBar, OneSignal, Keyboard } from 'ionic-native';
 import { WoocommerceService } from '../providers/woocommerce-service';
 import { SowService } from '../providers/sow-service';
 import { Storage } from '@ionic/storage';
 import { UserService } from '../providers/user-service';
-
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
@@ -50,7 +49,8 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      StatusBar.styleDefault();
+      StatusBar.styleLightContent();
+      Keyboard.hideKeyboardAccessoryBar(false);
 
       if (this.appConfig.Onesignal_Enable == true) {
         OneSignal.startInit(this.appConfig.OneSignal_AppID, this.appConfig.GCM_SenderID);
