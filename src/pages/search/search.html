@@ -6,8 +6,10 @@
 -->
 <ion-header>
   <ion-navbar color="primary">
-    <ion-searchbar [(ngModel)]="myInput" placeholder="Search">
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="getItems()" placeholder="Busca una revista">
     </ion-searchbar>
+<!--     <ion-searchbar [(ngModel)]="myInput" placeholder="Busca una revista">
+    </ion-searchbar> -->
     <ion-buttons end>
       <button ion-button color="white" (click)="onSearch()">{{ 'Search' | translate }}</button>
     </ion-buttons>

@@ -84,8 +84,6 @@ export class HomePage {
           }
           this.load_products_end = true;
           this.loadingModal.dismiss();
-
-
         }, (reson) => {
           this.loadingModal.dismiss();
           this.alertCtrl.create({
@@ -144,12 +142,12 @@ export class HomePage {
       });
   }
 
-  viewProduct(id) {
-    this.navCtrl.push(ProductDetailsPage, { id: id });
+  viewProduct(product) {
+    this.navCtrl.push(ProductDetailsPage, { product: product });
   }
 
-  goToSearch() {
-    this.navCtrl.push(SearchPage);
+  goToSearch(products) {
+    this.navCtrl.push(SearchPage, { products: products });
   }
 
   ionViewWillEnter() {

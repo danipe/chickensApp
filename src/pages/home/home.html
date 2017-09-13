@@ -13,7 +13,7 @@
       {{ 'Shop' | translate }}
     </ion-title>
     <ion-buttons end>
-      <button ion-button (click)="goToSearch()">
+      <button ion-button (click)="goToSearch(products)">
         <ion-icon name="search"></ion-icon>
         </button>
     </ion-buttons>
@@ -21,7 +21,7 @@
 </ion-header>
 <ion-content class='page-home'>
   <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Desliza para recargar" refreshingSpinner="circles" refreshingText="Recargando...">
     </ion-refresher-content>
   </ion-refresher>
   <ion-slides pager autoplay="3000" loop *ngIf="showSlide">
@@ -33,7 +33,7 @@
   <ion-grid>
     <ion-row>
       <ion-col col-6 *ngFor="let product of products">
-        <div class="card round" (click)="viewProduct(product.id)">
+        <div class="card round" (click)="viewProduct(product)">
           <div class="badge" *ngIf="product.on_sale">
             <span class="sale">{{ 'OnSale' | translate }}</span>
           </div>

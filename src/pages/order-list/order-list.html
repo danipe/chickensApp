@@ -11,7 +11,7 @@
 </ion-header>
 <ion-content class="commonbg">
   <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Desliza para recargar" refreshingSpinner="circles" refreshingText="Recargando...">
     </ion-refresher-content>
   </ion-refresher>
   <ion-card *ngFor="let order of orderList" (click)="viewOrder(order.id)">

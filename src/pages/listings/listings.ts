@@ -94,8 +94,8 @@ export class ListingsPage {
         }
     }
 
-    viewProduct(id) {
-        this.navCtrl.push(ProductDetailsPage, { id: id });
+    viewProduct(product) {
+        this.navCtrl.push(ProductDetailsPage, { product: product });
     }
 
     openDetails() {

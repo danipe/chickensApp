@@ -1421,11 +1421,11 @@ var HomePage = (function () {
             }
         });
     };
-    HomePage.prototype.viewProduct = function (id) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__product_details_product_details__["a" /* ProductDetailsPage */], { id: id });
+    HomePage.prototype.viewProduct = function (product) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__product_details_product_details__["a" /* ProductDetailsPage */], { product: product });
     };
-    HomePage.prototype.goToSearch = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__search_search__["a" /* SearchPage */]);
+    HomePage.prototype.goToSearch = function (products) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__search_search__["a" /* SearchPage */], { products: products });
     };
     HomePage.prototype.ionViewWillEnter = function () {
         this.tb.hideBar = false;
@@ -1434,7 +1434,7 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/sergiomoreno/ionic2-avicultura/src/pages/home/home.html"*/'<!--\n  Generated template for the Home page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n			</button>\n    <ion-title>\n      {{ \'Shop\' | translate }}\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="goToSearch()">\n        <ion-icon name="search"></ion-icon>\n        </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content class=\'page-home\'>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">\n    </ion-refresher-content>\n  </ion-refresher>\n  <ion-slides pager autoplay="3000" loop *ngIf="showSlide">\n    <ion-slide *ngFor="let item of slides">\n      <img src={{item}}>\n    </ion-slide>\n\n  </ion-slides>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-6 *ngFor="let product of products">\n        <div class="card round" (click)="viewProduct(product.id)">\n          <div class="badge" *ngIf="product.on_sale">\n            <span class="sale">{{ \'OnSale\' | translate }}</span>\n          </div>\n          <div class="img" [ngStyle]="{\'background-image\': \'url(\'+product.images[0].src+\')\'}">\n          </div>\n          <div class="padding-xs" text-center>\n            <div class="title">{{ product.name}}</div>\n            <div [innerHTML]="product.price_html"></div>\n          </div>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">\n    </ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n</ion-content>\n'/*ion-inline-end:"/Users/sergiomoreno/ionic2-avicultura/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/Users/sergiomoreno/ionic2-avicultura/src/pages/home/home.html"*/'<!--\n  Generated template for the Home page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n			</button>\n    <ion-title>\n      {{ \'Shop\' | translate }}\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="goToSearch(products)">\n        <ion-icon name="search"></ion-icon>\n        </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content class=\'page-home\'>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Desliza para recargar" refreshingSpinner="circles" refreshingText="Recargando...">\n    </ion-refresher-content>\n  </ion-refresher>\n  <ion-slides pager autoplay="3000" loop *ngIf="showSlide">\n    <ion-slide *ngFor="let item of slides">\n      <img src={{item}}>\n    </ion-slide>\n\n  </ion-slides>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-6 *ngFor="let product of products">\n        <div class="card round" (click)="viewProduct(product)">\n          <div class="badge" *ngIf="product.on_sale">\n            <span class="sale">{{ \'OnSale\' | translate }}</span>\n          </div>\n          <div class="img" [ngStyle]="{\'background-image\': \'url(\'+product.images[0].src+\')\'}">\n          </div>\n          <div class="padding-xs" text-center>\n            <div class="title">{{ product.name}}</div>\n            <div [innerHTML]="product.price_html"></div>\n          </div>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">\n    </ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n</ion-content>\n'/*ion-inline-end:"/Users/sergiomoreno/ionic2-avicultura/src/pages/home/home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_4__providers_woocommerce_service__["c" /* WoocommerceService */],
         __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_6__providers_tbar_service__["a" /* TbarService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_7__providers_sow_service__["a" /* SowService */], __WEBPACK_IMPORTED_MODULE_8__app_app_config__["a" /* AppConfig */], __WEBPACK_IMPORTED_MODULE_9__ngx_translate_core__["c" /* TranslateService */]])
@@ -2566,35 +2566,42 @@ var ProductDetailsPage = (function () {
             _this.loadingModal = _this.loadingCtrl.create({
                 content: value['Loading']
             });
+            _this.value = value;
             _this.loadingModal.present();
-            _this.wooService.getSingleProduct(_this.navParams.get('id')).then(function (product) {
-                _this.product = product;
-                _this.attrArray = product.attributes;
-                _this.slideImages = _this.product.images;
-                if (_this.product.variations.length > 0) {
-                    _this.hasVariation = true;
-                }
-                _this.storage.get('oddwolves-wishlist').then(function (data) {
-                    if (data) {
-                        var wishlistArray = JSON.parse(data);
-                        var findIndex = wishlistArray.findIndex(function (element) {
-                            return element.product_id == _this.product.id;
-                        });
-                        if (findIndex != -1) {
-                            _this.isFav = true;
-                        }
+            // this.wooService.getSingleProduct(this.navParams.get('product')).then((product: any) => {
+            //   this.product = product;
+            //   this.attrArray = product.attributes;
+            //   this.slideImages = this.product.images;
+            //   if (this.product.variations.length > 0) {
+            //     this.hasVariation = true;
+            //   }
+            _this.product = _this.navParams.get('product');
+            _this.attrArray = _this.product.attributes;
+            _this.slideImages = _this.product.images;
+            if (_this.product.variations.length > 0) {
+                _this.hasVariation = true;
+            }
+            _this.storage.get('oddwolves-wishlist').then(function (data) {
+                if (data) {
+                    var wishlistArray = JSON.parse(data);
+                    var findIndex = wishlistArray.findIndex(function (element) {
+                        return element.product_id == _this.product.id;
+                    });
+                    if (findIndex != -1) {
+                        _this.isFav = true;
                     }
-                });
-                _this.loadingModal.dismiss();
-            }, function (reson) {
-                _this.loadingModal.dismiss();
-                _this.alertCtrl.create({
-                    title: value['Notice'],
-                    message: value['NetWork_Error'],
-                    buttons: [value['OK']]
-                }).present();
+                }
             });
+            _this.loadingModal.dismiss();
+        }, function (reson) {
+            _this.loadingModal.dismiss();
+            _this.alertCtrl.create({
+                title: _this.value['Notice'],
+                message: _this.value['NetWork_Error'],
+                buttons: [_this.value['OK']]
+            }).present();
         });
+        //});
     };
     ProductDetailsPage.prototype.addCartClip = function () {
         var _this = this;
@@ -2940,39 +2947,58 @@ var __metadata = (this && this.__metadata) || function (k, v) {
   Ionic pages and navigation.
 */
 var SearchPage = (function () {
-    function SearchPage(navCtrl, viewCtrl, wooService, loadingCtrl, alertCtrl, translateService) {
+    function SearchPage(navCtrl, viewCtrl, wooService, loadingCtrl, alertCtrl, translateService, navParams) {
         this.navCtrl = navCtrl;
         this.viewCtrl = viewCtrl;
         this.wooService = wooService;
         this.loadingCtrl = loadingCtrl;
         this.alertCtrl = alertCtrl;
         this.translateService = translateService;
+        this.navParams = navParams;
         this.myInput = '';
+        this.searchTerm = '';
         this.noResult = false;
+        this.getProducts();
     }
-    SearchPage.prototype.onSearch = function () {
+    // setFilteredItems() {
+    //   console.log(this.searchTerm);
+    //   this.products = this.filterItems(this.searchTerm);
+    // }
+    SearchPage.prototype.getItems = function (searchTerm) {
+        if (!searchTerm) {
+            return;
+        }
+        this.products = this.products.filter(function (product) {
+            if (product.name && searchTerm) {
+                if (product.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
+                    return true;
+                }
+                return false;
+            }
+        });
+    };
+    SearchPage.prototype.getProducts = function () {
         var _this = this;
         this.translateService.get(['Notice', 'Loading', 'NetWork_Error', 'OK']).subscribe(function (value) {
+            _this.value = value;
             _this.loadingModal = _this.loadingCtrl.create({
                 content: value['Loading']
             });
             _this.loadingModal.present();
-            _this.wooService.getProducts({ search: _this.myInput }).then(function (products) {
-                if (products.length == 0) {
-                    _this.noResult = true;
-                }
-                else {
-                    _this.products = products;
-                }
-                _this.loadingModal.dismiss();
-            }, function (reson) {
-                _this.loadingModal.dismiss();
-                _this.alertCtrl.create({
-                    title: value['Notice'],
-                    message: value['NetWork_Error'],
-                    buttons: [value['OK']]
-                }).present();
-            });
+            _this.products = _this.navParams.get('products');
+            if (_this.products.length == 0) {
+                _this.noResult = true;
+            }
+            else {
+            }
+            _this.loadingModal.dismiss();
+        }, function (reson) {
+            _this.loadingModal.dismiss();
+            _this.alertCtrl.create({
+                title: _this.value['Notice'],
+                message: _this.value['NetWork_Error'],
+                buttons: [_this.value['OK']]
+            }).present();
         });
     };
     SearchPage.prototype.onClose = function () {
@@ -2985,12 +3011,12 @@ var SearchPage = (function () {
 }());
 SearchPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-search',template:/*ion-inline-start:"/Users/sergiomoreno/ionic2-avicultura/src/pages/search/search.html"*/'<!--\n  Generated template for the Search page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-searchbar [(ngModel)]="myInput" placeholder="Search">\n    </ion-searchbar>\n    <ion-buttons end>\n      <button ion-button color="white" (click)="onSearch()">{{ \'Search\' | translate }}</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div *ngIf="noResult" class="empty">\n    <h3>{{ \'No_Results\' | translate }}</h3>\n  </div>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-6 *ngFor="let product of products">\n        <div class="card round" (click)="viewProduct(product.id)">\n          <div class="badge" *ngIf="product.on_sale">\n            <span class="sale">OnSale</span>\n          </div>\n          <div class="img" [ngStyle]="{\'background-image\': \'url(\'+product.images[0].src+\')\'}">\n          </div>\n          <div class="padding-xs" text-center>\n            <div class="title">{{ product.name}}</div>\n            <div>{{ product.regular_price }}</div>\n          </div>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/Users/sergiomoreno/ionic2-avicultura/src/pages/search/search.html"*/
+        selector: 'page-search',template:/*ion-inline-start:"/Users/sergiomoreno/ionic2-avicultura/src/pages/search/search.html"*/'<!--\n  Generated template for the Search page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="getItems()" placeholder="Busca una revista">\n    </ion-searchbar>\n<!--     <ion-searchbar [(ngModel)]="myInput" placeholder="Busca una revista">\n    </ion-searchbar> -->\n    <ion-buttons end>\n      <button ion-button color="white" (click)="onSearch()">{{ \'Search\' | translate }}</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div *ngIf="noResult" class="empty">\n    <h3>{{ \'No_Results\' | translate }}</h3>\n  </div>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-6 *ngFor="let product of products">\n        <div class="card round" (click)="viewProduct(product.id)">\n          <div class="badge" *ngIf="product.on_sale">\n            <span class="sale">OnSale</span>\n          </div>\n          <div class="img" [ngStyle]="{\'background-image\': \'url(\'+product.images[0].src+\')\'}">\n          </div>\n          <div class="padding-xs" text-center>\n            <div class="title">{{ product.name}}</div>\n            <div>{{ product.regular_price }}</div>\n          </div>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/Users/sergiomoreno/ionic2-avicultura/src/pages/search/search.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2__providers_woocommerce_service__["c" /* WoocommerceService */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["c" /* TranslateService */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_woocommerce_service__["c" /* WoocommerceService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_woocommerce_service__["c" /* WoocommerceService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["c" /* TranslateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["c" /* TranslateService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _g || Object])
 ], SearchPage);
 
+var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=search.js.map
 
 /***/ }),
@@ -3113,7 +3139,7 @@ var CategoryPage = (function () {
 }());
 CategoryPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-category',template:/*ion-inline-start:"/Users/sergiomoreno/ionic2-avicultura/src/pages/category/category.html"*/'<!--\n  Generated template for the Category page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n			</button>\n    <ion-title>{{ \'Category\' | translate }}</ion-title>\n   \n  </ion-navbar>\n</ion-header>\n<ion-content class="commonbg">\n   <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">\n    </ion-refresher-content>\n  </ion-refresher>\n  <ion-list>\n    <ion-item *ngFor="let category of categories" (click)="openListings(category.id)">\n      <ion-thumbnail item-left *ngIf="category.image!=\'\'"  [ngClass]="{first_child: category.sort==1,second_child: category.sort==2}">\n        <img src="{{category.image.src}}">\n      </ion-thumbnail>\n      <span [ngClass]="{first_child: category.sort==1&&category.image==\'\',second_child: category.sort==2&&category.image==\'\'}">{{category.name}}</span>\n      <ion-icon name="arrow-forward" item-right></ion-icon>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/sergiomoreno/ionic2-avicultura/src/pages/category/category.html"*/
+        selector: 'page-category',template:/*ion-inline-start:"/Users/sergiomoreno/ionic2-avicultura/src/pages/category/category.html"*/'<!--\n  Generated template for the Category page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n			</button>\n    <ion-title>{{ \'Category\' | translate }}</ion-title>\n   \n  </ion-navbar>\n</ion-header>\n<ion-content class="commonbg">\n   <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Desliza para recargar" refreshingSpinner="circles" refreshingText="Recargando...">\n    </ion-refresher-content>\n  </ion-refresher>\n  <ion-list>\n    <ion-item *ngFor="let category of categories" (click)="openListings(category.id)">\n      <ion-thumbnail item-left *ngIf="category.image!=\'\'"  [ngClass]="{first_child: category.sort==1,second_child: category.sort==2}">\n        <img src="{{category.image.src}}">\n      </ion-thumbnail>\n      <span [ngClass]="{first_child: category.sort==1&&category.image==\'\',second_child: category.sort==2&&category.image==\'\'}">{{category.name}}</span>\n      <ion-icon name="arrow-forward" item-right></ion-icon>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/sergiomoreno/ionic2-avicultura/src/pages/category/category.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__providers_woocommerce_service__["c" /* WoocommerceService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
         __WEBPACK_IMPORTED_MODULE_5__providers_tbar_service__["a" /* TbarService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_6__ngx_translate_core__["c" /* TranslateService */]])
@@ -3230,8 +3256,8 @@ var ListingsPage = (function () {
             infiniteScroll.enable(false);
         }
     };
-    ListingsPage.prototype.viewProduct = function (id) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__product_details_product_details__["a" /* ProductDetailsPage */], { id: id });
+    ListingsPage.prototype.viewProduct = function (product) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__product_details_product_details__["a" /* ProductDetailsPage */], { product: product });
     };
     ListingsPage.prototype.openDetails = function () {
         var detailsModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_2__product_details_product_details__["a" /* ProductDetailsPage */]);
@@ -3264,7 +3290,7 @@ var ListingsPage = (function () {
 }());
 ListingsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-listings',template:/*ion-inline-start:"/Users/sergiomoreno/ionic2-avicultura/src/pages/listings/listings.html"*/'<!--\n  Generated template for the Listings page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n <ion-navbar color="primary">\n    <button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n			</button>\n    <ion-title>{{ \'Listings\' | translate }}</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="commonbg">\n	 <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">\n    </ion-refresher-content>\n  </ion-refresher>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-6 *ngFor="let product of products">\n        <div class="card round" (click)="viewProduct(product.id)">\n          <div class="badge" *ngIf="product.on_sale">\n            <span class="sale">OnSale</span>\n          </div>\n          <div class="img" [ngStyle]="{\'background-image\': \'url(\'+product.images[0].src+\')\'}">\n          </div>\n          <div class="padding-xs" text-center>\n            <div class="title">{{ product.name}}</div>\n            <div [innerHTML]="product.price_html"></div>\n          </div>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n   <ion-infinite-scroll-content loadingSpinner="bubbles"\n      loadingText="Loading more data...">\n      </ion-infinite-scroll-content>\n </ion-infinite-scroll>\n</ion-content>\n'/*ion-inline-end:"/Users/sergiomoreno/ionic2-avicultura/src/pages/listings/listings.html"*/
+        selector: 'page-listings',template:/*ion-inline-start:"/Users/sergiomoreno/ionic2-avicultura/src/pages/listings/listings.html"*/'<!--\n  Generated template for the Listings page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n <ion-navbar color="primary">\n    <button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n			</button>\n    <ion-title>{{ \'Listings\' | translate }}</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="commonbg">\n	 <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Desliza para recargar" refreshingSpinner="circles" refreshingText="Recargando...">\n    </ion-refresher-content>\n  </ion-refresher>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-6 *ngFor="let product of products">\n        <div class="card round" (click)="viewProduct(product)">\n          <div class="badge" *ngIf="product.on_sale">\n            <span class="sale">OnSale</span>\n          </div>\n          <div class="img" [ngStyle]="{\'background-image\': \'url(\'+product.images[0].src+\')\'}">\n          </div>\n          <div class="padding-xs" text-center>\n            <div class="title">{{ product.name}}</div>\n            <div [innerHTML]="product.price_html"></div>\n          </div>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n   <ion-infinite-scroll-content loadingSpinner="bubbles"\n      loadingText="Loading more data...">\n      </ion-infinite-scroll-content>\n </ion-infinite-scroll>\n</ion-content>\n'/*ion-inline-end:"/Users/sergiomoreno/ionic2-avicultura/src/pages/listings/listings.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3__providers_woocommerce_service__["c" /* WoocommerceService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__providers_tbar_service__["a" /* TbarService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
@@ -3913,7 +3939,7 @@ var OrderListPage = (function () {
 }());
 OrderListPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-order-list',template:/*ion-inline-start:"/Users/sergiomoreno/ionic2-avicultura/src/pages/order-list/order-list.html"*/'<!--\n  Generated template for the OrderList page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>{{ \'OrderList\' | translate }}</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="commonbg">\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">\n    </ion-refresher-content>\n  </ion-refresher>\n  <ion-card *ngFor="let order of orderList" (click)="viewOrder(order.id)">\n    <ion-card-header>\n      <ion-row>\n        <ion-col>#{{ \'Order_ID\' | translate }}:{{order.id}}</ion-col>\n        <ion-col text-right>{{ \'Created\' | translate }}:{{order.date_created | date:\'dd/MM/yyyy\'}}</ion-col>\n      </ion-row>\n    </ion-card-header>\n    <ion-row padding>\n      <ion-col>{{ \'Total\' | translate }}:{{order.total}}</ion-col>\n      <ion-col text-right>({{order.line_items.length}})items</ion-col>\n    </ion-row>\n   \n    <ion-row padding>\n      <ion-col>{{ \'Status\' | translate }}:{{order.status | uppercase}}</ion-col>\n      <ion-col text-right><ion-icon name="arrow-forward"></ion-icon></ion-col>\n    </ion-row>\n  </ion-card>\n  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">\n    </ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n</ion-content>\n'/*ion-inline-end:"/Users/sergiomoreno/ionic2-avicultura/src/pages/order-list/order-list.html"*/
+        selector: 'page-order-list',template:/*ion-inline-start:"/Users/sergiomoreno/ionic2-avicultura/src/pages/order-list/order-list.html"*/'<!--\n  Generated template for the OrderList page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>{{ \'OrderList\' | translate }}</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="commonbg">\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Desliza para recargar" refreshingSpinner="circles" refreshingText="Recargando...">\n    </ion-refresher-content>\n  </ion-refresher>\n  <ion-card *ngFor="let order of orderList" (click)="viewOrder(order.id)">\n    <ion-card-header>\n      <ion-row>\n        <ion-col>#{{ \'Order_ID\' | translate }}:{{order.id}}</ion-col>\n        <ion-col text-right>{{ \'Created\' | translate }}:{{order.date_created | date:\'dd/MM/yyyy\'}}</ion-col>\n      </ion-row>\n    </ion-card-header>\n    <ion-row padding>\n      <ion-col>{{ \'Total\' | translate }}:{{order.total}}</ion-col>\n      <ion-col text-right>({{order.line_items.length}})items</ion-col>\n    </ion-row>\n   \n    <ion-row padding>\n      <ion-col>{{ \'Status\' | translate }}:{{order.status | uppercase}}</ion-col>\n      <ion-col text-right><ion-icon name="arrow-forward"></ion-icon></ion-col>\n    </ion-row>\n  </ion-card>\n  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">\n    </ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n</ion-content>\n'/*ion-inline-end:"/Users/sergiomoreno/ionic2-avicultura/src/pages/order-list/order-list.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_3__providers_woocommerce_service__["c" /* WoocommerceService */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__["c" /* TranslateService */]])
@@ -4631,15 +4657,21 @@ var MyApp = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */]),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/sergiomoreno/ionic2-avicultura/src/app/app.html"*/'<!-- <ion-menu [content]="content">\n  <ion-content class="outer-content" no-border-top>\n    <ion-list>\n      <ion-list-header>\n        Shop For {{appConfig.Shop_Name}}\n      </ion-list-header>\n      <ion-item menuClose (click)="goHome()">\n        <ion-icon name="ios-home-outline"></ion-icon>\n        Home\n      </ion-item>\n      <ion-item menuClose (click)="modalContact()">\n        <ion-icon name="ios-mail-outline"></ion-icon>\n        Contact Us\n      </ion-item>\n      <ion-item menuClose (click)="modalFaq()">\n        <ion-icon name="ios-information-circle-outline"></ion-icon>\n        FAQ\n      </ion-item>\n      <ion-item menuClose (click)="modalAbout()">\n        <ion-icon name="ios-globe-outline"></ion-icon>\n        About\n      </ion-item>\n    </ion-list>\n  </ion-content>\n</ion-menu> -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n'/*ion-inline-end:"/Users/sergiomoreno/ionic2-avicultura/src/app/app.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__app_config__["a" /* AppConfig */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__app_config__["a" /* AppConfig */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__providers_woocommerce_service__["c" /* WoocommerceService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_woocommerce_service__["c" /* WoocommerceService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__providers_sow_service__["a" /* SowService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_sow_service__["a" /* SowService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_7__providers_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__providers_user_service__["a" /* UserService */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_14__ngx_translate_core__["c" /* TranslateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_14__ngx_translate_core__["c" /* TranslateService */]) === "function" && _l || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */],
+        __WEBPACK_IMPORTED_MODULE_2__app_config__["a" /* AppConfig */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_woocommerce_service__["c" /* WoocommerceService */],
+        __WEBPACK_IMPORTED_MODULE_5__providers_sow_service__["a" /* SowService */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_7__providers_user_service__["a" /* UserService */],
+        __WEBPACK_IMPORTED_MODULE_14__ngx_translate_core__["c" /* TranslateService */]])
 ], MyApp);
 
-var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),

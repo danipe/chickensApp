@@ -32,6 +32,7 @@ export class ProductDetailsPage {
   errorModal: any;
   cartProductNumber = 0;
   isFav = false;
+  value: any;
   org: string;
   attrArray: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public wooService: WoocommerceService, public loadingCtrl: LoadingController,
@@ -69,10 +70,17 @@ export class ProductDetailsPage {
       this.loadingModal = this.loadingCtrl.create({
         content: value['Loading']
       });
+      this.value = value;
       this.loadingModal.present();
-      this.wooService.getSingleProduct(this.navParams.get('id')).then((product: any) => {
-        this.product = product;
-        this.attrArray = product.attributes;
+      // this.wooService.getSingleProduct(this.navParams.get('product')).then((product: any) => {
+      //   this.product = product;
+      //   this.attrArray = product.attributes;
+      //   this.slideImages = this.product.images;
+      //   if (this.product.variations.length > 0) {
+      //     this.hasVariation = true;
+      //   }
+        this.product = this.navParams.get('product');
+        this.attrArray = this.product.attributes;
         this.slideImages = this.product.images;
         if (this.product.variations.length > 0) {
           this.hasVariation = true;
@@ -93,12 +101,12 @@ export class ProductDetailsPage {
       }, (reson) => {
         this.loadingModal.dismiss();
         this.alertCtrl.create({
-          title: value['Notice'],
-          message: value['NetWork_Error'],
-          buttons: [value['OK']]
+          title: this.value['Notice'],
+          message: this.value['NetWork_Error'],
+          buttons: [this.value['OK']]
         }).present();
       });
-    });
+    //});
 
   }
 

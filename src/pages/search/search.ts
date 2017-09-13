@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ViewController, LoadingController, AlertController } from 'ionic-angular';
+import { NavController, ViewController, LoadingController, AlertController,NavParams } from 'ionic-angular';
 import { WoocommerceService } from '../../providers/woocommerce-service';
 import { ProductDetailsPage } from '../product-details/product-details';
 import { TranslateService } from '@ngx-translate/core';
@@ -15,40 +15,59 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class SearchPage {
   myInput: string = '';
-  products: any;
+  products: Array<any>;
   loadingModal: any;
   noResult: boolean;
   errorModal: any;
+  searchTerm: string = '';
+  value: any;
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, public wooService: WoocommerceService,
-    public loadingCtrl: LoadingController, public alertCtrl: AlertController, public translateService: TranslateService) {
+    public loadingCtrl: LoadingController, public alertCtrl: AlertController, public translateService: TranslateService, public navParams: NavParams) {
     this.noResult = false;
+    this.getProducts();
+  }
+  // setFilteredItems() {
+  //   console.log(this.searchTerm);
+  //   this.products = this.filterItems(this.searchTerm);
+  // }
 
+  getItems(searchTerm){
+      if (!searchTerm) {
+        return;
+      }
+      this.products = this.products.filter((product) => {
+        if(product.name && searchTerm) {
+          if (product.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
+            return true;
+          }
+          return false;
+        }
+      }); 
   }
 
-  onSearch() {
+  getProducts() {
     this.translateService.get(['Notice', 'Loading', 'NetWork_Error', 'OK']).subscribe(value => {
+      this.value = value;
       this.loadingModal = this.loadingCtrl.create({
         content: value['Loading']
       });
       this.loadingModal.present();
-      this.wooService.getProducts({ search: this.myInput }).then((products: Array<any>) => {
-        if (products.length == 0) {
+        this.products = this.navParams.get('products');
+        if(this.products.length == 0){
           this.noResult = true;
-        } else {
-          this.products = products;
+        }else{
+
         }
         this.loadingModal.dismiss();
       }, (reson) => {
         this.loadingModal.dismiss();
         this.alertCtrl.create({
-          title: value['Notice'],
-          message: value['NetWork_Error'],
-          buttons: [value['OK']]
+          title: this.value['Notice'],
+          message: this.value['NetWork_Error'],
+          buttons: [this.value['OK']]
         }).present();
       });
-    });
-
-  }
+    }
   onClose() {
     this.viewCtrl.dismiss();
   }
